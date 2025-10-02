@@ -14,6 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 
 import com.example.newsinshort.ui.navigation.AppNavigationGraph
 import com.example.newsinshort.ui.theme.NewsInShortTheme
@@ -24,12 +26,14 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        installSplashScreen()
+        WindowCompat.setDecorFitsSystemWindows(window, true)
         setContent {
             NewsInShortTheme {
                 Scaffold(
                     modifier = Modifier.
-                    fillMaxSize().background(Color.White)
+                    fillMaxSize().background(Color.White),
                 ){
                     AppEntryPoint()
                 }

@@ -95,4 +95,10 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
+
+        implementation("androidx.core:core-splashscreen:1.0.0")
+    //coil
+    // Coil v2 (The stable version)
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
 }
